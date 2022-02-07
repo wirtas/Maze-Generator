@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MazeRenderer : MonoBehaviour
 {
@@ -14,8 +16,25 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField] 
     private Transform wallPrefab, startPrefab, endPrefab, background, bgParent;
 
-    private void Start()
+    [SerializeField] 
+    private Button button;
+    
+    private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Click();
+        }
+    }
+    
+
+    private void Click()
+    {  
+        foreach (Transform child in transform) 
+        {
+            Destroy(child.gameObject);
+        }
+
         var maze = MazeGenerator.Generate(width, height);
         Draw(maze);
     }
