@@ -78,25 +78,19 @@ public class MazeRenderer : MonoBehaviour
                 {
                     Transform startPosition = Instantiate(startPrefab, bgParent);
                     startPosition.position = position+ new Vector3(0,0,1);
-                    Vector3 startPositionLocalScale = startPosition.localScale;
-                    startPositionLocalScale = new Vector3(size, startPositionLocalScale.y);
-                    startPosition.localScale = startPositionLocalScale;
+                    startPosition.localScale = new Vector3(size, size);
                 }
                 else if (i == width - 1 && j == height - 1)
                 {
                     Transform endPosition = Instantiate(endPrefab, bgParent);
                     endPosition.position = position+ new Vector3(0,0,1);
-                    Vector3 endPositionLocalScale = endPosition.localScale;
-                    endPositionLocalScale = new Vector3(size, endPositionLocalScale.y);
-                    endPosition.localScale = endPositionLocalScale;
+                    endPosition.localScale = new Vector3(size, size);
                 }
                 else
                 {
                     Transform bg = Instantiate(background, bgParent);
                     bg.position = position + new Vector3(0,0,1);
-                    Vector3 bgLocalScale = bg.localScale;
-                    bgLocalScale = new Vector3(size, bgLocalScale.y);
-                    bg.localScale = bgLocalScale;
+                    bg.localScale = new Vector3(size, size);
                 }
             }
         }
