@@ -4,21 +4,14 @@ using UnityEngine.UI;
 
 public class MazeRenderer : MonoBehaviour
 {
-    [SerializeField] [Range(5,30)] 
-    private int width = 10;
+    [SerializeField] [Range(5,30)] private int width = 10;
     
-    [SerializeField] [Range(5,30)] 
-    private int height = 10;
+    [SerializeField] [Range(5,30)] private int height = 10;
     
-    [SerializeField] [Range(0.5f,3)] 
-    private float size = 1;
+    [SerializeField] [Range(0.5f,3)] private float size = 1;
     
-    [SerializeField] 
-    private Transform wallPrefab, startPrefab, endPrefab, background, bgParent;
+    [SerializeField] private Transform wallPrefab, startPrefab, endPrefab, background, bgParent;
 
-    [SerializeField] 
-    private Button button;
-    
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
